@@ -1,31 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Input Validasi Tanam</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-    }
-    iframe {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      border: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Aplikasi Pertanian</title>
+    <script src="https://cdn.tailwindcss.com  "></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css  ">
+    <style>
+        .menu-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .menu-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #059669);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .menu-card:hover::before {
+            transform: scaleX(1);
+        }
+        .icon-wrapper {
+            transition: all 0.3s ease;
+        }
+        .menu-card:hover .icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .shimmer {
+            animation: shimmer 1.5s infinite linear;
+            background: #f6f7f8;
+            background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-size: 800px 104px;
+            border-radius: 4px;
+        }
+        @keyframes shimmer {
+            0% { background-position: -800px 0; }
+            100% { background-position: 800px 0; }
+        }
+    </style>
 </head>
-<body>
-  <iframe 
-    src="https://script.google.com/macros/s/AKfycbx_EBJ1YPzSlZFjKaD3QZbkG360Zy3Nlpf0jRNeG5tKwsiwa9y7BpuVBSFl0BYb84XyjQ/exec"
-    allow="camera; microphone;"
-    allowfullscreen>
-  </iframe>
+<body class="bg-gray-50 min-h-screen grid-pattern">
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-seedling text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">AgriTech Dashboard</h1>
+                        <p class="text-sm text-gray-500">Sistem Manajemen Pertanian Digital</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-gray-400 hover:text-gray-600 transition-colors">
+                        <i class="fas fa-bell text-xl"></i>
+                    </button>
+                    <div class="w-10 h-10 bg-gray-300 rounded-full overflow-hidden">
+                        <img src="https://picsum.photos/seed/user123/40/40.jpg  " alt="User" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Selamat Datang di Dashboard</h2>
+            <p class="text-gray-600">Kelola stok, lahan, dan panen pertanian Anda dengan mudah</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="https://sites.google.com/view/plasma-department/cek-stok-petani  " target="_blank" class="menu-card relative bg-white rounded-xl p-6 shadow-md hover:shadow-xl cursor-pointer group">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="icon-wrapper w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-warehouse text-blue-600 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-medium text-blue-600 bg-blue-100 px-2 py-1 rounded-full">Stok</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    Cek Stok Petani
+                </h3>
+                <p class="text-sm text-gray-600 mb-4">Monitor dan pantau stok produk pertanian dari para petani</p>
+                <div class="flex items-center text-sm text-gray-500 group-hover:text-blue-600 transition-colors">
+                    <span>Lihat Detail</span>
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
+
+            <a href="#" class="menu-card relative bg-white rounded-xl p-6 shadow-md hover:shadow-xl cursor-pointer group">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="icon-wrapper w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-plus-circle text-green-600 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">Input</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                    Input Stok Awal
+                </h3>
+                <p class="text-sm text-gray-600 mb-4">Tambahkan data stok awal produk pertanian baru</p>
+                <div class="flex items-center text-sm text-gray-500 group-hover:text-green-600 transition-colors">
+                    <span>Tambah Data</span>
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
+
+            <a href="#" class="menu-card relative bg-white rounded-xl p-6 shadow-md hover:shadow-xl cursor-pointer group">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="icon-wrapper w-14 h-14 bg-yellow-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-table text-yellow-600 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Lahan</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-yellow-600 transition-colors">
+                    Data Lahan Tanam
+                </h3>
+                <p class="text-sm text-gray-600 mb-4">Kelola data meja dan informasi lahan pertanian</p>
+                <div class="flex items-center text-sm text-gray-500 group-hover:text-yellow-600 transition-colors">
+                    <span>Kelola Lahan</span>
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
+
+            <a href="#" class="menu-card relative bg-white rounded-xl p-6 shadow-md hover:shadow-xl cursor-pointer group">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="icon-wrapper w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check-circle text-purple-600 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-medium text-purple-600 bg-purple-100 px-2 py-1 rounded-full">Validasi</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                    Validasi Penanaman
+                </h3>
+                <p class="text-sm text-gray-600 mb-4">Verifikasi dan validasi data penanaman petani</p>
+                <div class="flex items-center text-sm text-gray-500 group-hover:text-purple-600 transition-colors">
+                    <span>Validasi Sekarang</span>
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
+
+            <a href="#" class="menu-card relative bg-white rounded-xl p-6 shadow-md hover:shadow-xl cursor-pointer group">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="icon-wrapper w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-tractor text-orange-600 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-medium text-orange-600 bg-orange-100 px-2 py-1 rounded-full">Panen</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                    Input Data Panen
+                </h3>
+                <p class="text-sm text-gray-600 mb-4">Catat hasil panen dan data produksi pertanian</p>
+                <div class="flex items-center text-sm text-gray-500 group-hover:text-orange-600 transition-colors">
+                    <span>Catat Panen</span>
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
+
+            <a href="#" class="menu-card relative bg-white rounded-xl p-6 shadow-md hover:shadow-xl cursor-pointer group">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="icon-wrapper w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-exclamation-triangle text-red-600 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-medium text-red-600 bg-red-100 px-2 py-1 rounded-full">Monitoring</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
+                    Monitoring Tanaman
+                </h3>
+                <p class="text-sm text-gray-600 mb-4">Catat log dan pantau tanaman bermasalah</p>
+                <div class="flex items-center text-sm text-gray-500 group-hover:text-red-600 transition-colors">
+                    <span>Monitoring</span>
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-4" id="stats-container">
+            <div class="bg-white rounded-lg p-4 shadow-sm loading-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Total Petani Aktif</p>
+                        <p class="text-2xl font-bold text-gray-900" id="activeFarmers">0</p>
+                        <div class="h-8 w-20 shimmer mt-1 hidden" id="activeFarmersShimmer"></div>
+                    </div>
+                    <i class="fas fa-users text-gray-400 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm loading-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Lahan Aktif</p>
+                        <p class="text-2xl font-bold text-gray-900" id="activeFarmers">0</p>
+                        <div class="h-8 w-20 shimmer mt-1 hidden" id="activeLandsShimmer"></div>
+                    </div>
+                    <i class="fas fa-map-marked-alt text-gray-400 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm loading-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Stok Tersedia</p>
+                        <p class="text-2xl font-bold text-gray-900" id="totalStock">0</p>
+                        <div class="h-8 w-20 shimmer mt-1 hidden" id="totalStockShimmer"></div>
+                    </div>
+                    <i class="fas fa-boxes text-gray-400 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-sm loading-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600">Log Butuh Evaluasi</p>
+                        <p class="text-2xl font-bold text-gray-900" id="evaluationCount">0</p>
+                        <div class="h-8 w-20 shimmer mt-1 hidden" id="evaluationCountShimmer"></div>
+                    </div>
+                    <i class="fas fa-bug text-gray-400 text-2xl"></i>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
