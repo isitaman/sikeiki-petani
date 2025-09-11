@@ -10,6 +10,26 @@
       overflow: hidden;
       width: 100%;
       height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .header a {
+      text-decoration: none;
+      color: #007cba;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .header a:hover {
+      color: #005a87;
     }
     iframe {
       position: fixed;
@@ -22,6 +42,12 @@
   </style>
 </head>
 <body>
+  <!-- Tombol Kembali ke Beranda -->
+  <div class="header">
+    <a href="index.html">&larr; Kembali ke Beranda</a>
+  </div>
+
+  <!-- Iframe ke Google Apps Script -->
   <iframe 
     src="https://script.google.com/macros/s/AKfycbx_EBJ1YPzSlZFjKaD3QZbkG360Zy3Nlpf0jRNeG5tKwsiwa9y7BpuVBSFl0BYb84XyjQ/exec"
     allow="camera; microphone;"
