@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DAshboard Petani</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header a {
+      text-decoration: none;
+      color: #007cba;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .header a:hover {
+      color: #005a87;
+    }
+    .logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+    .app-name {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+    iframe {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <!-- Ganti URL logo di bawah ini sesuai kebutuhan -->
+    <img src="https://isitaman.github.io/plasma-javina/favicon-96x96.png" alt="Logo Aplikasi" class="logo">
+    <span class="app-name">Dashboard Petani</span>
+    <a href="index.html">Beranda</a>
+  </div>
+
+  <iframe 
+    src="https://script.google.com/macros/s/AKfycbyBqICWqhOEL-RIXwICkeENNjY2Da9OcZumFMPkr2k84myWbHM8DkJLE1-_S39h2lcigg/exec"
+    allow="camera; microphone;"
+    allowfullscreen>
+  </iframe>
+</body>
+</html>
